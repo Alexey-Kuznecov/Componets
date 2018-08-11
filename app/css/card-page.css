@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 0.9em;
+  font-family: 'Mallanna','Roboto', sans-serif;
+  background: #e8e9e9;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+h1 {
+  color: #555;
+}
+
+.main {
+  width: 100%;
+}
