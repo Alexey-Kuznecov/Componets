@@ -1,54 +1,77 @@
 .card-container
-   display: inline-flex;
-   flex-wrap: wrap;
-   // card-direction: row-reverse;
+   display: inline-flex
+   flex-wrap: wrap
 .card-image
-   width: 100%;
-   height: 150px;
-   overflow: hidden;
+   width: 100%
+   height: 160px
+   overflow: hidden
 .card-image
    img
-      width: 131%;
-      min-width: 200px;
+      width: 130%
+      min-width: 200px
 .card-row
-   width: 18%;
-   margin: 10px;
-   flex-wrap: wrap;
-   box-shadow: 0px 0px 10px 0px #c7c7c7;
-@media screen and (max-width: 480px)
-   .card-row
+   width: 18%
+   // min-width: 120px
+   margin:
+      top: 10px
+      bottom: 10px
+      right: 1%
+      left: 1%
+   flex-wrap: wrap
+   box-shadow: 0px 0px 10px 0px #c7c7c7
+
+// @mixin media($max-width, $min-width)
+//    @media screen and (max-width: $max-width + px) and (min-width: $min-width + px)
+//       .card-row
+//          width: 95%
+//       .card-image
+//          width: 95%
+
+// $max: 640
+// $min: 480
+
+// @for $i from 1 through 9
+//    @include media($max, $min)
+//    $max: $max + 160
+//    $min: $min + 160
+
+@media screen and (max-width: 480px) and (min-width: 320px)
+  .card-row
+      width: 100%;
+
+@media screen and (max-width: 640px) and (min-width: 480px)
+  .card-row
       width: 95%;
-   .card-image
-      img
-         min-width: 220px;
-@media screen and (max-width: 768px) and (min-width: 480px)
-   .card-row
-      width: 44%;
-      margin-left: 3%;
-   .card-image
-      img
-         width: 350px;
-         min-width: 220px;
-@media screen and (max-width: 1170px) and (min-width: 768px)
-   .card-row
-      width: 30%;
-      margin-left: 1.7%;
-   .card-image
-      img
-         width: 100px;
-         min-width: 310px;
-@media screen and (max-width: 1445px) and (min-width: 1170px)
-   .card-image
-      img
-         width: 120%;
-         min-width: 200px;
-   .card-row
+
+@media screen and (max-width: 800px) and (min-width: 640px)
+  .card-row
+      width: 48%;
+
+@media screen and (max-width: 960px) and (min-width: 800px)
+  .card-row
+      width: 47.8%; // 31.3% > 100%, 85%
+
+@media screen and (max-width: 1120px) and (min-width: 960px)
+  .card-row
+      width: 31.3%;
+
+@media screen and (max-width: 1280px) and (min-width: 1120px)
+  .card-row
+      width: 31.3%;
+
+@media screen and (max-width: 1440px) and (min-width: 1280px)
+  .card-row
       width: 23%;
-@media screen and (max-width: 1920px) and (min-width: 1445px)
-   .card-image
-      img
-         width: 120%;
-         min-width: 200px;
-   .card-row
-      width: 18.4%;
-      margin-left: 0.8%;
+
+@media screen and (max-width: 1600px) and (min-width: 1440px)
+  .card-row
+      width: 23%;
+
+@media screen and (max-width: 1760px) and (min-width: 1600px)
+  .card-row
+      width: 18%;
+
+@media screen and (max-width: 1920px) and (min-width: 1760px)
+  .card-row
+      width: 18%;
+
