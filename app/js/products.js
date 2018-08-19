@@ -11,7 +11,10 @@ $(function() {
             + "</div>"
             + "<div class=card-text>"
                + "<div class=card-element>" + data.products[i].title + "</div>"
-               + "<div class=card-element>" + data.products[i].description + "</div>"
+               + "<div class=card-element>" + data.products[i].description.substring(0,100) + "..." + "</div>"
+               + "<div class='card-element card-action'>"
+                  + "<a href='/'>Смотреть</a>"
+               + "</div>"
             + "</div>"
           + "</div>";
       }
