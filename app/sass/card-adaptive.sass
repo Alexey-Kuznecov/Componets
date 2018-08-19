@@ -1,5 +1,5 @@
 .card-container
-   display: inline-flex
+   display: flex
    flex-wrap: wrap
 .card-image
    width: 100%
@@ -7,7 +7,8 @@
    overflow: hidden
 .card-image
    img
-      width: 130%
+      padding-right: 100px;
+      width: 190%
       min-width: 200px
 .card-row
    width: 18%
@@ -20,58 +21,30 @@
    flex-wrap: wrap
    box-shadow: 0px 0px 10px 0px #c7c7c7
 
-// @mixin media($max-width, $min-width)
-//    @media screen and (max-width: $max-width + px) and (min-width: $min-width + px)
-//       .card-row
-//          width: 95%
-//       .card-image
-//          width: 95%
-
-// $max: 640
-// $min: 480
-
-// @for $i from 1 through 9
-//    @include media($max, $min)
-//    $max: $max + 160
-//    $min: $min + 160
-
-@media screen and (max-width: 480px) and (min-width: 320px)
+@media screen and (max-width: 480px)
   .card-row
-      width: 100%;
+    width: 100%;
 
-@media screen and (max-width: 640px) and (min-width: 480px)
-  .card-row
-      width: 95%;
+@mixin media($max-width, $min-width)
+   @media screen and (max-width: $max-width + px) and (min-width: $min-width + px)
+      .card-row
+        @if $max-width <= 640 and $min-width >= 480
+          width: 95%
+        @else if $max-width <= 960 and $min-width >= 640
+          width: 48%
+        @else if $max-width <= 1280 and $min-width >= 960
+          width: 31%
+        @else if $max-width <= 1600 and $min-width >= 1280
+          width: 23%
+        @else if $max-width <= 1920 and $min-width >= 1600
+          width: 18%
+        @else
+          width: 100%
 
-@media screen and (max-width: 800px) and (min-width: 640px)
-  .card-row
-      width: 48%;
+$max: 640
+$min: 480
 
-@media screen and (max-width: 960px) and (min-width: 800px)
-  .card-row
-      width: 47.8%; // 31.3% > 100%, 85%
-
-@media screen and (max-width: 1120px) and (min-width: 960px)
-  .card-row
-      width: 31.3%;
-
-@media screen and (max-width: 1280px) and (min-width: 1120px)
-  .card-row
-      width: 31.3%;
-
-@media screen and (max-width: 1440px) and (min-width: 1280px)
-  .card-row
-      width: 23%;
-
-@media screen and (max-width: 1600px) and (min-width: 1440px)
-  .card-row
-      width: 23%;
-
-@media screen and (max-width: 1760px) and (min-width: 1600px)
-  .card-row
-      width: 18%;
-
-@media screen and (max-width: 1920px) and (min-width: 1760px)
-  .card-row
-      width: 18%;
-
+@for $i from 1 through 9
+   @include media($max, $min)
+   $max: $max + 160
+   $min: $min + 160
